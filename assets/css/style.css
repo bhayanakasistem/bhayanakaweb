@@ -1,10 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 /* Warna pastel */
 :root {
     --orange: #ffb347;
+    --orange-dark: #ff9f1c;
     --blue: #a3c4f3;
     --dark-blue: #5a80c0;
     --text-dark: #333;
     --bg-light: #fdfdfd;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -12,12 +21,11 @@ body {
     background-color: var(--bg-light);
     color: var(--text-dark);
     line-height: 1.6;
-    margin: 0;
 }
 
 header {
     background-color: var(--dark-blue);
-    color: white;
+    color: var(--orange); /* Warna teks header */
     padding: 1em 2em;
     display: flex;
     justify-content: space-between;
@@ -26,15 +34,20 @@ header {
 }
 
 nav a {
-    color: white;
+    color: var(--orange); /* Warna link nav */
     margin-left: 1em;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
 }
 
 .hero {
     background: linear-gradient(to right, var(--blue), var(--dark-blue));
-    color: white;
+    color: var(--orange); /* Warna teks hero */
     padding: 100px 20px;
     text-align: center;
 }
@@ -52,13 +65,25 @@ nav a {
 }
 
 .hero .cta-btn:hover {
-    background: #ff9f1c;
+    background: var(--orange-dark);
+}
+
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 h2 {
     color: var(--dark-blue);
     margin-bottom: 20px;
     text-align: center;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
 .product-card {
@@ -77,7 +102,7 @@ h2 {
 
 footer {
     background-color: var(--dark-blue);
-    color: white;
+    color: var(--orange); /* Warna teks footer */
     padding: 2em 1em;
     text-align: center;
     margin-top: 40px;
