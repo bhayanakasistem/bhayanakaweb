@@ -1,21 +1,22 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* Warna pastel */
+:root {
+    --orange: #ffb347;
+    --blue: #a3c4f3;
+    --dark-blue: #5a80c0;
+    --text-dark: #333;
+    --bg-light: #fdfdfd;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
     line-height: 1.6;
+    margin: 0;
 }
 
 header {
-    background-color: #004080;
+    background-color: var(--dark-blue);
     color: white;
     padding: 1em 2em;
     display: flex;
@@ -32,50 +33,50 @@ nav a {
 }
 
 .hero {
-    background: linear-gradient(to right, #004080, #0074d9);
+    background: linear-gradient(to right, var(--blue), var(--dark-blue));
     color: white;
     padding: 100px 20px;
     text-align: center;
 }
 
 .hero .cta-btn {
-    background: #ff6600;
+    background: var(--orange);
     color: white;
     padding: 12px 24px;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 20px;
     display: inline-block;
+    font-weight: bold;
+    transition: background 0.3s ease;
 }
 
-main {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: auto;
+.hero .cta-btn:hover {
+    background: #ff9f1c;
 }
 
 h2 {
-    color: #004080;
+    color: var(--dark-blue);
     margin-bottom: 20px;
     text-align: center;
 }
 
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
 .product-card {
     background: white;
-    padding: 20px;
+    border: 1px solid #eee;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 20px;
     text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
 }
 
 footer {
-    background-color: #004080;
+    background-color: var(--dark-blue);
     color: white;
     padding: 2em 1em;
     text-align: center;
