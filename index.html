@@ -1,45 +1,107 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PT. Bhayanaka Tama Sakti</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produk - PT. Bhayanaka Tama Sakti</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffaf5;
+      color: #333;
+    }
+    .swiper {
+      width: 100vw;
+      height: 100vh;
+    }
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+    .produk-card {
+      max-width: 600px;
+      background: #fefefe;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .produk-card img {
+      max-width: 100%;
+      border-radius: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .produk-card h2 {
+      color: #f4a261;
+      margin-bottom: 1rem;
+    }
+    .produk-card p {
+      font-size: 1rem;
+      color: #555;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #2a9d8f;
+    }
+  </style>
 </head>
 <body>
-  <section class="slide" id="cover">
-    <h1>PT. Bhayanaka Tama Sakti</h1>
-    <p>Solusi Alat Laboratorium Klinik</p>
-    <a href="#tentang" class="next-slide">→</a>
-  </section>
-
-  <section class="slide" id="tentang">
-    <h2>Tentang Kami</h2>
-    <p>Kami adalah distributor alat laboratorium klinik dengan pengalaman lebih dari 10 tahun.</p>
-    <a href="#produk" class="next-slide">→</a>
-  </section>
-
-  <section class="slide" id="produk">
-    <h2>Produk Kami</h2>
-    <div class="produk-grid">
-      <div class="produk-item">
-        <img src="assets/images/AU240.png" alt="Alat Hematologi" width="120" />
-        <p>Alat Hematologi</p>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <!-- Slide 1: Produk Utama -->
+      <div class="swiper-slide">
+        <div class="produk-card">
+          <img src="https://via.placeholder.com/500x300?text=Alat+Hematologi" alt="Alat Hematologi" />
+          <h2>Alat Hematologi</h2>
+          <p>Alat penghitung sel darah otomatis dengan akurasi tinggi. Cocok untuk laboratorium klinik kecil hingga menengah.</p>
+        </div>
       </div>
-      <div class="produk-item">
-        <img src="assets/images/H3900.png" alt="Centrifuge" width="120" />
-        <p>Centrifuge</p>
+      <!-- Slide 2: Produk 2 -->
+      <div class="swiper-slide">
+        <div class="produk-card">
+          <img src="https://via.placeholder.com/500x300?text=Centrifuge" alt="Centrifuge" />
+          <h2>Centrifuge</h2>
+          <p>Mesin pemisah sampel berbasis kecepatan tinggi. Digunakan untuk plasma dan serum dalam pemeriksaan laboratorium.</p>
+        </div>
+      </div>
+      <!-- Slide 3: Tentang Kami -->
+      <div class="swiper-slide">
+        <div class="produk-card">
+          <h2>Tentang Kami</h2>
+          <p>PT. Bhayanaka Tama Sakti adalah penyedia alat laboratorium klinik dengan pengalaman lebih dari 10 tahun melayani kebutuhan rumah sakit dan klinik di Indonesia.</p>
+        </div>
+      </div>
+      <!-- Slide 4: Kontak -->
+      <div class="swiper-slide">
+        <div class="produk-card">
+          <h2>Kontak</h2>
+          <p>Hubungi kami: <br>Email: info@bhayanaka.co.id<br>Telepon: (021) 123-4567<br>WhatsApp: 0812-3456-7890</p>
+        </div>
       </div>
     </div>
-    <a href="#kontak" class="next-slide">→</a>
-  </section>
 
-  <section class="slide" id="kontak">
-    <h2>Kontak Kami</h2>
-    <p>Alamat: Jl. Contoh No.123, Jakarta<br/>
-       WA: 0812-3456-7890<br/>
-       Email: info@bhayanaka.co.id</p>
-  </section>
+    <!-- Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      direction: 'horizontal',
+      loop: false,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      keyboard: true,
+    });
+  </script>
 </body>
 </html>
