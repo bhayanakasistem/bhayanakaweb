@@ -1,84 +1,45 @@
-/* Warna pastel */
-:root {
-    --orange: #ffb347;
-    --blue: #a3c4f3;
-    --dark-blue: #5a80c0;
-    --text-dark: #333;
-    --bg-light: #fdfdfd;
-}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-    line-height: 1.6;
-    margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  margin: 0;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  overflow-x: auto;
 }
 
-header {
-    background-color: var(--dark-blue);
-    color: white;
-    padding: 1em 2em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+.slide {
+  scroll-snap-align: start;
+  flex: 0 0 100%;
+  min-height: 100vh;
+  padding: 60px;
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+  background: #fdfdfd;
+  border-right: 1px solid #eee;
 }
 
-nav a {
-    color: white;
-    margin-left: 1em;
-    text-decoration: none;
-    font-weight: bold;
+h1, h2 {
+  color: #ff9f1c;
 }
 
-.hero {
-    background: linear-gradient(to right, var(--blue), var(--dark-blue));
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
+.produk-grid {
+  display: flex;
+  gap: 20px;
 }
 
-.hero .cta-btn {
-    background: var(--orange);
-    color: white;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    display: inline-block;
-    font-weight: bold;
-    transition: background 0.3s ease;
+.produk-item {
+  width: 150px;
+  text-align: center;
 }
 
-.hero .cta-btn:hover {
-    background: #ff9f1c;
-}
-
-h2 {
-    color: var(--dark-blue);
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.product-card {
-    background: white;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-    transition: transform 0.2s;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-}
-
-footer {
-    background-color: var(--dark-blue);
-    color: white;
-    padding: 2em 1em;
-    text-align: center;
-    margin-top: 40px;
+.next-slide {
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #5a80c0;
 }
