@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <title>Kubus 3D dengan Planet Bumi</title>
+  <title>Bhayanaka Tama Sakti</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     * {
@@ -17,39 +17,32 @@
       color: white;
     }
 
-    /* Background luar angkasa */
     .space {
       position: fixed;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       background: radial-gradient(ellipse at bottom, #000 0%, #020d1f 100%);
       overflow: hidden;
       z-index: -3;
     }
 
-    /* Planet Bumi */
     .earth {
       position: fixed;
       bottom: -5vh;
-      left: 0%;
-      transform: translateX(-20%);
-      width: 80vh;
-      max-width: 80vw;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80vmin;
+      max-width: 95vw;
       opacity: 0.8;
       z-index: -2;
-      
+      pointer-events: none;
+      user-select: none;
     }
 
-    @keyframes earthFloat {
-      from { transform: translateX(-50%) translateY(0); }
-      to { transform: translateX(-50%) translateY(10vh); }
-    }
-
-    /* Bintang */
     .stars {
       position: fixed;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       z-index: -1;
     }
 
@@ -70,22 +63,22 @@
     .header, .footer {
       text-align: center;
       position: absolute;
-      width: 100%;
-      padding: 10px;
-      background: rgba(0, 0, 0, 0.4);
+      width: 100vw;
+      padding: 8px 10px;
+      font-size: 0.85rem;
+      background: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(4px);
-      font-size: 0.9rem;
       z-index: 2;
+      left: 0;
+      box-sizing: border-box;
     }
 
     .header { top: 0; }
     .footer { bottom: 0; }
 
     .scene {
-      width: 80vw;
-      height: 80vw;
-      max-width: 320px;
-      max-height: 320px;
+      width: 70vmin;
+      height: 70vmin;
       perspective: 1000px;
       position: absolute;
       top: 50%;
@@ -93,6 +86,11 @@
       transform: translate(-50%, -50%);
       touch-action: none;
       z-index: 1;
+      max-width: 95vw;
+      max-height: 70vh;
+      min-width: 250px;
+      min-height: 250px;
+      box-sizing: border-box;
     }
 
     .wrapper {
@@ -113,43 +111,50 @@
 
     .face {
       position: absolute;
-      width: 100%;
-      height: 100%;
+      width: 80%;
+      height: 80%;
       background: rgba(255, 255, 255, 0.95);
-      border: 2px solid #333;
-      font-size: 1.2rem;
+      border: 1px solid #333;
+      font-size: 1rem;
       color: #111;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 1rem;
-      box-shadow: inset 0 0 30px rgba(0,0,0,0.15);
+      padding: 0.5rem;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+      word-break: break-word;
     }
 
     .face a {
       text-decoration: none;
       color: inherit;
       font-weight: bold;
+      padding: 0.2em 0.6em;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .face a:active {
+      background: #eee;
+      color: #195a93;
     }
 
-    .front  { transform: rotateY(  0deg) translateZ(25vw); }
-    .back   { transform: rotateY(180deg) translateZ(25vw); }
-    .right  { transform: rotateY( 90deg) translateZ(25vw); }
-    .left   { transform: rotateY(-90deg) translateZ(25vw); }
-    .top    { transform: rotateX( 90deg) translateZ(25vw); }
-    .bottom { transform: rotateX(-90deg) translateZ(25vw); }
+    .front  { transform: rotateY(  0deg) translateZ(35vmin); }
+    .back   { transform: rotateY(180deg) translateZ(35vmin); }
+    .right  { transform: rotateY( 90deg) translateZ(35vmin); }
+    .left   { transform: rotateY(-90deg) translateZ(35vmin); }
+    .top    { transform: rotateX( 90deg) translateZ(35vmin); }
+    .bottom { transform: rotateX(-90deg) translateZ(35vmin); }
 
     .logo {
       position: absolute;
-      width: 100%;
-      height: auto;
+      width: 60%;
       top: 50%;
       left: 50%;
       transform-style: preserve-3d;
-      transform: translate(-50%, -50%) translateZ(0vw);
+      transform: translate(-50%, -50%) translateZ(0vmin);
       pointer-events: none;
-      animation: spin 12s linear infinite;
+      animation: spin 10s linear infinite;
       z-index: 1;
     }
 
@@ -162,10 +167,63 @@
 
     @keyframes spin {
       from {
-        transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) translateZ(0vw);
+        transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) translateZ(0vmin);
       }
       to {
-        transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg) translateZ(0vw);
+        transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg) translateZ(0vmin);
+      }
+    }
+
+    /* Responsive untuk mobile */
+    @media (max-width: 600px) {
+      .header, .footer {
+        font-size: 0.78rem;
+        padding: 6px 4vw;
+      }
+      .scene {
+        width: 94vw;
+        height: 60vw;
+        max-width: 100vw;
+        max-height: 65vh;
+        min-width: 180px;
+        min-height: 180px;
+        top: 53%;
+        left: 50%;
+        transform: translate(-50%, -53%);
+      }
+      .earth {
+        width: 97vw;
+        max-width: 97vw;
+        bottom: -18vw;
+      }
+      .face {
+        font-size: 0.87rem;
+        padding: 0.25rem;
+      }
+      .logo {
+        width: 60%;
+      }
+    }
+    @media (max-width: 400px) {
+      .header, .footer {
+        font-size: 0.7rem;
+        padding: 4px 2vw;
+      }
+      .scene {
+        min-width: 120px;
+        min-height: 120px;
+        height: 35vh;
+      }
+      .face {
+        font-size: 0.8rem;
+        padding: 0.1rem;
+      }
+      .logo {
+        width: 45%;
+      }
+      .earth {
+        width: 98vw;
+        bottom: -18vw;
       }
     }
   </style>
@@ -173,7 +231,7 @@
 <body>
   <!-- Background luar angkasa -->
   <div class="space"></div>
-  <img class="earth" src="bumi.jpg" alt="Planet Bumi">
+  <img class="earth" src="bumi.jpg" alt="Planet Bumi" loading="lazy">
 
   <!-- Bintang -->
   <div class="stars" id="stars"></div>
@@ -199,8 +257,8 @@
         <div class="face top"><a href="#">Halaman 5</a></div>
         <div class="face bottom"><a href="#">Halaman 6</a></div>
       </div>
-      <div class="logo" id="logo">
-        <img src="logo.jpg" alt="Logo Inti">
+      <div class="logo">
+        <img src="logo.jpg" alt="Logo Inti" loading="lazy">
       </div>
     </div>
   </div>
@@ -254,7 +312,7 @@
 
     // Bintang acak
     const starsContainer = document.getElementById("stars");
-    for (let i = 0; i < 150; i++) {
+    for (let i = 0; i < (window.innerWidth < 600 ? 80 : 150); i++) {
       const star = document.createElement("div");
       star.className = "star";
       star.style.top = `${Math.random() * 100}%`;
