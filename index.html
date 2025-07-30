@@ -168,6 +168,59 @@
         transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg) translateZ(0vw);
       }
     }
+    
+    /* Responsive untuk mobile */
+    @media (max-width: 600px) {
+      .header, .footer {
+        font-size: 0.78rem;
+        padding: 6px 4vw;
+      }
+      .scene {
+        width: 94vw;
+        height: 60vw;
+        max-width: 100vw;
+        max-height: 65vh;
+        min-width: 180px;
+        min-height: 180px;
+        top: 53%;
+        left: 50%;
+        transform: translate(-50%, -53%);
+      }
+      .earth {
+        width: 97vw;
+        max-width: 97vw;
+        bottom: -18vw;
+      }
+      .face {
+        font-size: 0.87rem;
+        padding: 0.25rem;
+      }
+      .logo {
+        width: 40%;
+      }
+    }
+    @media (max-width: 400px) {
+      .header, .footer {
+        font-size: 0.7rem;
+        padding: 4px 2vw;
+      }
+      .scene {
+        min-width: 120px;
+        min-height: 120px;
+        height: 35vh;
+      }
+      .face {
+        font-size: 0.8rem;
+        padding: 0.1rem;
+      }
+      .logo {
+        width: 30%;
+      }
+      .earth {
+        width: 98vw;
+        bottom: -18vw;
+      }
+    }
   </style>
 </head>
 <body>
