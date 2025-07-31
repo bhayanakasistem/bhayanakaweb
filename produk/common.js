@@ -1,4 +1,3 @@
-<script>
 function openTab(evt, tabId) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
@@ -8,7 +7,10 @@ function openTab(evt, tabId) {
 
 function loadProduct(url, direction) {
   const old = document.getElementById('page-content');
-  if (!old) { window.location.href = url; return; }
+  if (!old) {
+    window.location.href = url;
+    return;
+  }
 
   const clone = old.cloneNode(true);
   clone.style.position = 'absolute';
@@ -60,4 +62,3 @@ window.addEventListener('popstate', e => {
       });
   }
 });
-</script>
