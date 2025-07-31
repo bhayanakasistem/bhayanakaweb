@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iHeto H3900 - 3-Part Hematology Analyzer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+      color: #333;
+      overflow-x: hidden;
+    }
+    header {
+      position: relative;
+      background-color: #a3c9f1;
+      color: #003366;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .back-home {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      background-color: #ffa94d;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    .product-image-wrapper {
+      position: relative;
+      max-width: 400px;
+      margin: 2rem auto;
+      overflow: visible;
+    }
+    .product-image-wrapper img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: block;
+    }
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      font-weight: 700;
+      color: #003366;
+      background: transparent;
+      padding: 0 0.5rem;
+      cursor: pointer;
+      z-index: 10;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-left { left: -60px; }
+    .nav-right { right: -60px; }
+    .nav-arrow:hover { color: #ffa94d; }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background: #fff;
+      border-radius: 12px;
+      margin: 1rem auto;
+      width: fit-content;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .tab {
+      padding: 1rem 2rem;
+      cursor: pointer;
+      color: #333;
+      background: #f0f0f0;
+      transition: all 0.3s;
+    }
+    .tab.active {
+      background-color: #a3c9f1;
+      color: #003366;
+      font-weight: bold;
+    }
+    .tab-content {
+      display: none;
+      padding: 2rem;
+      max-width: 900px;
+      margin: 1rem auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .tab-content.active { display: block; }
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #004b6b;
+      margin-bottom: 1rem;
+      border-left: 5px solid #ffa94d;
+      padding-left: 1rem;
+    }
+    .product-features-box, .product-spec-box {
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    ul.product-features, ul.product-spec {
+      margin: 0;
+      padding: 0;
+    }
+    ul.product-features {
+      list-style: disc;
+      list-style-position: inside;
+      padding-left: 1.2rem;
+    }
+    ul.product-features li, ul.product-spec li {
+      padding: 0.5rem 0.8rem;
+      border-bottom: 1px solid #ddd;
+    }
+    ul.product-features li:nth-child(odd), ul.product-spec li:nth-child(odd) {
+      background-color: #eaf4fb;
+    }
+    ul.product-features li:nth-child(even), ul.product-spec li:nth-child(even) {
+      background-color: #fff4e6;
+    }
+    ul.product-features li:last-child, ul.product-spec li:last-child {
+      border-bottom: none;
+    }
+    .label {
+      font-weight: 600;
+      color: #003366;
+      display: inline-block;
+      min-width: 140px;
+    }
+    .brosur-img {
+      width: 100%;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .download-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #ffa94d;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .download-link:hover { background-color: #ff922b; }
+    footer {
+      text-align: center;
+      background-color: #e9ecef;
+      padding: 1rem;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* slide helpers */
+    .slide-out-left { animation: slideOutLeft 0.4s forwards; }
+    .slide-out-right { animation: slideOutRight 0.4s forwards; }
+    .slide-in-left { animation: slideInLeft 0.4s forwards; }
+    .slide-in-right { animation: slideInRight 0.4s forwards; }
+
+    @keyframes slideOutLeft {
+      to { transform: translateX(-100%); opacity: 0; }
+    }
+    @keyframes slideOutRight {
+      to { transform: translateX(100%); opacity: 0; }
+    }
+    @keyframes slideInLeft {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-arrow { font-size: 2.2rem; }
+      .tab { padding: 0.8rem 1rem; font-size: 0.95rem; }
+      .tab-content { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="page-content">
+    <header>
+      <a href="https://bhayanakasistem.github.io/bhayanakaweb/" class="back-home">← Kembali ke Home</a>
+      <h1>iHeto H3900</h1>
+      <p>3-Part Hematology Analyzer</p>
+    </header>
+
+    <div class="product-image-wrapper">
+      <span class="nav-arrow nav-left" onclick="loadProduct('au240.html','right')" title="iHeto AU240">‹</span>
+      <img src="h3900.jpg" alt="Gambar Produk H3900" />
+      <span class="nav-arrow nav-right" onclick="loadProduct('h5910.html','left')" title="iHeto H5910">›</span>
+    </div>
+
+    <div class="tabs">
+      <div class="tab active" onclick="openTab(event,'description')">Product Description</div>
+      <div class="tab" onclick="openTab(event,'brochure')">Brochure</div>
+    </div>
+
+    <div id="description" class="tab-content active">
+      <h2>Fitur Produk</h2>
+      <div class="product-features-box">
+        <ul class="product-features">
+          <li>Troughput 60 Sample per jam</li>
+          <li>Layar sentuh 10.4"</li>
+          <li>Penyimpanan data hingga 600.000 hasil tes</li>
+        </ul>
+      </div>
+
+      <h2>Spesifikasi Teknis</h2>
+      <div class="product-spec-box">
+        <ul class="product-spec">
+          <li><span class="label">22 Parameters:</span><br>WBC, RBC, HGB, PLT, MCV, MPV, GRAN%, LYM%, MID%, RDW-SD, RDW-CV, PDW-CV, PDW-SD, P-LCC, GRAN#, LYM#, MID#, HCT, MCH, MCHC, PCT, P-LCR</li>
+          <li><span class="label">Detection Channel:</span><br>Dual-channel for counting</li>
+          <li><span class="label">Sample Volume</span><br>Whole Blood 9ul, Prediluted 320ul</li>
+          <li><span class="label">Counting Modes:</span><br>L-WBC, L-PLT, L-WBC/PLT</li>
+          <li><span class="label">Input/Output:</span><br>4 USB ports and 1 LAN port</li>
+          <li><span class="label">Printout:</span><br>Internal Thermal Printer<br>Support USB external printer, various types of printer<br>Multiple print templates available</li>
+          <li><span class="label">Language:</span><br>English, Chinese, Spanish</li>
+          <li><span class="label">Principle:</span><br>Electrical Impedance Meethod/Colorimetric Method</li>
+          <li><span class="label">Power Supply:</span><br>100-240V, 50-60Hz</li>
+          <li><span class="label">Dimension:</span><br>460(L)x280(W)x400(H)</li>
+          <li><span class="label">Net Weight:</span><br>18kg</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="brochure" class="tab-content">
+      <h2>Brosur Produk</h2>
+      <img src="Brosur H3900_page1.jpg" alt="Halaman 1 Brosur H3900" class="brosur-img" />
+      <img src="Brosur H3900_page2.jpg" alt="Halaman 2 Brosur H3900" class="brosur-img" />
+      <a href="Brosur H3900.pdf" class="download-link" download>📥 Unduh PDF Brosur</a>
+    </div>
+
+    <footer>
+      <div><a href="https://bhayanakasistem.github.io/bhayanakaweb/" class="back-home">← Kembali ke Home</a></div>
+      <div style="margin-top:0.5rem;">© PT. Bhayanaka Tama Sakti</div>
+    </footer>
+  </div>
+
+  <script>
+    function openTab(evt, tabId) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.getElementById(tabId)?.classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+
+    function loadProduct(url, direction) {
+      const old = document.getElementById('page-content');
+      const clone = old.cloneNode(true);
+      clone.style.position = 'absolute';
+      clone.style.top = '0';
+      clone.style.left = '0';
+      clone.style.width = '100%';
+      document.body.appendChild(clone);
+
+      clone.classList.add(direction === 'left' ? 'slide-out-left' : 'slide-out-right');
+
+      fetch(url)
+        .then(r => {
+          if (!r.ok) throw new Error('load failed');
+          return r.text();
+        })
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const newPage = doc.getElementById('page-content');
+          if (!newPage) throw new Error('no content');
+
+          newPage.style.position = 'relative';
+          newPage.style.opacity = '0';
+          newPage.style.transform = direction === 'left' ? 'translateX(100%)' : 'translateX(-100%)';
+          newPage.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
+
+          old.replaceWith(newPage);
+
+          requestAnimationFrame(() => {
+            newPage.style.transform = 'translateX(0)';
+            newPage.style.opacity = '1';
+          });
+
+          history.pushState({ url }, '', url);
+          setTimeout(() => clone.remove(), 500);
+        })
+        .catch(() => {
+          window.location.href = url;
+        });
+    }
+
+    window.addEventListener('popstate', e => {
+      if (e.state?.url) {
+        fetch(e.state.url)
+          .then(r => r.text())
+          .then(html => {
+            const doc = new DOMParser().parseFromString(html, 'text/html');
+            const newPage = doc.getElementById('page-content');
+            if (newPage) {
+              document.getElementById('page-content').replaceWith(newPage);
+            }
+          });
+      }
+    });
+  </script>
+</body>
+</html>
