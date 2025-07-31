@@ -186,7 +186,10 @@ footer {
 @keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity:1; } }
 
 @media (max-width: 600px) {
-  .nav-arrow { font-size: 2.2rem; }
-  .tab { padding: .8rem 1rem; font-size: .95rem; }
-  .tab-content { padding: 1.2rem; }
+  .nav-arrow {
+    font-size: 2.2rem;
+    padding: 0 .3rem;
+  }
+  .nav-left { left: 8px; }   /* geser ke dalam */
+  .nav-right { right: 8px; } /* geser ke dalam */
 }
