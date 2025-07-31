@@ -1,0 +1,192 @@
+:root {
+  --blue: #003366;
+  --pastel-header: #a3c9f1;
+  --highlight: #ffa94d;
+  --bg: #f4f6f8;
+}
+* { box-sizing:border-box; }
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: #333;
+  overflow-x: hidden;
+}
+
+header {
+  position: relative;
+  background-color: var(--pastel-header);
+  color: var(--blue);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.back-home {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  background-color: var(--highlight);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: inline-block;
+  transition: background .25s;
+}
+.back-home:hover { background-color: #ff922b; }
+
+.product-image-wrapper {
+  position: relative;
+  max-width: 400px;
+  margin: 2rem auto;
+  overflow: visible;
+}
+.product-image-wrapper img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: block;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--blue);
+  background: transparent;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+  text-decoration: none;
+  transition: color .3s;
+}
+.nav-left { left: -60px; }
+.nav-right { right: -60px; }
+.nav-arrow:hover { color: var(--highlight); }
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  border-radius: 12px;
+  margin: 1rem auto;
+  width: fit-content;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.tab {
+  padding: 1rem 2rem;
+  cursor: pointer;
+  color: #333;
+  background: #f0f0f0;
+  transition: all .3s;
+}
+.tab.active {
+  background-color: #a3c9f1;
+  color: var(--blue);
+  font-weight: bold;
+}
+
+.tab-content {
+  display: none;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 1rem auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.tab-content.active { display: block; }
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #004b6b;
+  margin-bottom: 1rem;
+  border-left: 5px solid var(--highlight);
+  padding-left: 1rem;
+}
+
+.product-features-box,
+.product-spec-box {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+ul.product-features,
+ul.product-spec {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul.product-features li,
+ul.product-spec li {
+  padding: .5rem .8rem;
+  border-bottom: 1px solid #ddd;
+}
+ul.product-features li:nth-child(odd),
+ul.product-spec li:nth-child(odd) { background: #eaf4fb; }
+ul.product-features li:nth-child(even),
+ul.product-spec li:nth-child(even) { background: #fff4e6; }
+ul.product-features li:last-child,
+ul.product-spec li:last-child { border-bottom: none; }
+
+.label {
+  font-weight: 600;
+  color: var(--blue);
+  display: inline-block;
+  min-width: 140px;
+}
+
+.brosur-img {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.download-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: .8rem 1.5rem;
+  background: var(--highlight);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background .3s;
+}
+.download-link:hover { background: #ff922b; }
+
+footer {
+  text-align: center;
+  background: #e9ecef;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: .95rem;
+  color: #555;
+}
+
+/* slide helpers */
+.slide-out-left { animation: slideOutLeft .4s forwards; }
+.slide-out-right { animation: slideOutRight .4s forwards; }
+.slide-in-left { animation: slideInLeft .4s forwards; }
+.slide-in-right { animation: slideInRight .4s forwards; }
+
+@keyframes slideOutLeft { to { transform: translateX(-100%); opacity: 0; } }
+@keyframes slideOutRight { to { transform: translateX(100%); opacity: 0; } }
+@keyframes slideInLeft { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(0); opacity:1; } }
+@keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity:1; } }
+
+@media (max-width: 600px) {
+  .nav-arrow { font-size: 2.2rem; }
+  .tab { padding: .8rem 1rem; font-size: .95rem; }
+  .tab-content { padding: 1.2rem; }
+}
