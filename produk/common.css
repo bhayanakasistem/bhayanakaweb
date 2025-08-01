@@ -32,10 +32,10 @@ header {
   position: relative;
   background-color: var(--pastel-header);
   color: var(--blue);
-  padding: 0.35rem 1rem;
+  padding: 0.15rem 1rem;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  font-size: 1.1rem;
+  font-size: 0.8rem;
 }
 
 .back-home {
