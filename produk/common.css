@@ -262,7 +262,7 @@ footer {
 
 @media (max-width: 600px) {
   .back-home {
-    padding: 0.6rem 1rem;
+    padding: 0.4rem 0.8rem;
     font-size: 0.7rem;
   }
 
