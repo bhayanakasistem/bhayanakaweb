@@ -57,7 +57,7 @@ header {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 4rem; /* diperbesar */
+  font-size: 5rem; /* diperbesar */
   font-weight: 700;
   color: var(--blue);
   background: rgba(255,255,255,0.75);
@@ -192,7 +192,7 @@ footer {
 
 @media (max-width: 600px) {
   .nav-arrow {
-    font-size: 3rem; /* disesuaikan mobile */
+    font-size: 5rem; /* disesuaikan mobile */
     padding: 0 .5rem;
   }
   .nav-left { left: 8px; }
