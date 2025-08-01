@@ -30,13 +30,16 @@ header {
   top: 1rem;
   background-color: var(--highlight);
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.45rem .8rem; /* sedikit lebih compact */
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 0.9rem;
-  display: inline-block;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   transition: background .25s;
+  white-space: nowrap;
 }
 .back-home:hover { background-color: #ff922b; }
 
