@@ -57,16 +57,23 @@ header {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 3rem;
+  font-size: 4rem; /* diperbesar dari 3rem */
   font-weight: 700;
   color: var(--blue);
-  background: transparent;
-  padding: 0 0.5rem;
+  background: rgba(255,255,255,0.75); /* supaya terlihat di atas gambar */
+  padding: 0 0.75rem; /* area klik lebih luas */
   cursor: pointer;
   z-index: 10;
   text-decoration: none;
-  transition: color .3s;
+  border-radius: 6px;
+  transition: color .3s, background .3s;
 }
+
+.nav-arrow:hover {
+  color: white;
+  background: var(--highlight);
+}
+
 .nav-left { left: -60px; }
 .nav-right { right: -60px; }
 .nav-arrow:hover { color: var(--highlight); }
@@ -187,8 +194,8 @@ footer {
 
 @media (max-width: 600px) {
   .nav-arrow {
-    font-size: 2.2rem;
-    padding: 0 .3rem;
+    font-size: 3rem; /* sedikit dikecil untuk mobile */
+    padding: 0 0.5rem;
   }
   .nav-left { left: 8px; }   /* geser ke dalam */
   .nav-right { right: 8px; } /* geser ke dalam */
