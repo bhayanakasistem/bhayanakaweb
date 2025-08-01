@@ -60,7 +60,7 @@ header {
   font-size: 5rem; /* diperbesar */
   font-weight: 700;
   color: var(--blue);
-  background: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.3);
   padding: 0 0.75rem;
   cursor: pointer;
   z-index: 10;
@@ -192,7 +192,7 @@ footer {
 
 @media (max-width: 600px) {
   .nav-arrow {
-    font-size: 5rem; /* disesuaikan mobile */
+    font-size: 4rem; /* disesuaikan mobile */
     padding: 0 .5rem;
   }
   .nav-left { left: 8px; }
