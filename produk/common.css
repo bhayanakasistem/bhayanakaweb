@@ -29,7 +29,7 @@ header {
   left: 1rem;
   top: 1rem;
   background-color: var(--highlight);
-  color: white;
+  color: black;
   padding: 0.45rem .8rem; /* sedikit lebih compact */
   border-radius: 8px;
   text-decoration: none;
