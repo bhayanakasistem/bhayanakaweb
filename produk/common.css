@@ -195,11 +195,16 @@ footer {
     font-size: 4rem; /* disesuaikan mobile */
     padding: 0 .5rem;
   }
-  .nav-left { left: 8px; }
-  .nav-right { right: 8px; }
-  .tab {
-    padding: .8rem 1rem;
-    font-size: .95rem;
+  .nav-left {
+    position: fixed;
+    top: 50%;
+    left: calc(50% - 100px);
+    transform: translateY(-50%);
   }
-  .tab-content { padding: 1.2rem; }
+  .nav-right {
+    position: fixed;
+    top: 50%;
+    left: calc(50% + 60px);
+    transform: translateY(-50%);
+  }
 }
