@@ -4,75 +4,78 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>iHeto ChemNeo - Semi-Auto Chemistry Analyzer</title>
+  <meta name="description" content="ChemNeo Semi-Auto Chemistry Analyzer - fitur, spesifikasi, dan brosur.">
   <link rel="stylesheet" href="common.css" />
 </head>
 <body>
   <div id="page-content">
     <header>
-      <a href="https://bhayanakasistem.github.io/bhayanakaweb/" class="back-home">🏠 Beranda</a>
+      <a href="https://bhayanakasistem.github.io/bhayanakaweb/" class="back-home" aria-label="Kembali ke beranda">🏠 Beranda</a>
       <h1>iHeto ChemNeo</h1>
       <p>Semi-Auto Chemistry Analyzer</p>
     </header>
 
-    <div class="product-image-wrapper">
-      <span class="nav-arrow nav-left" onclick="loadProduct('h5910.html','right')" title="iHeto H5910">‹</span>
-      <img src="chemneo.jpg" alt="Gambar Produk ChemNeo" />
-      <span class="nav-arrow nav-right" onclick="loadProduct('au120.html','left')" title="iHeto AU120">›</span>
-    </div>
-
-    <div class="tabs">
-      <div class="tab active" onclick="openTab(event,'description')">Product Description</div>
-      <div class="tab" onclick="openTab(event,'brochure')">Brochure</div>
-    </div>
-
-    <div id="description" class="tab-content active">
-      <h2>Fitur Produk</h2>
-      <div class="product-features-box">
-        <ul class="product-features">
-          <li>Endpoint, Fixed-time, Kinetics, dan Turbidimetry</li>
-          <li>8 panjang gelombang (340–670 nm)</li>
-          <li>Layar sentuh TFT 7.0"</li>
-          <li>Dukungan keyboard dan mouse via USB</li>
-          <li>Lampu halogen tahan lama</li>
-          <li>Flow cell quartz permanen</li>
-          <li>Menyimpan &gt;100.000 hasil tes</li>
-          <li>Tampilan kurva reaksi real-time</li>
-          <li>Printer termal built-in</li>
-          <li>Inkubasi hingga 16 posisi</li>
-        </ul>
+    <main>
+      <div class="product-image-wrapper">
+        <a href="h5910.html" class="nav-arrow nav-left" aria-label="Produk sebelumnya: iHeto H5910" onclick="loadProduct('h5910.html','right'); return false;">‹</a>
+        <img src="chemneo.jpg" alt="Gambar iHeto ChemNeo Semi-Auto Chemistry Analyzer" />
+        <a href="au120.html" class="nav-arrow nav-right" aria-label="Produk selanjutnya: iHeto AU120" onclick="loadProduct('au120.html','left'); return false;">›</a>
       </div>
 
-      <h2>Spesifikasi Teknis</h2>
-      <div class="product-spec-box">
-        <ul class="product-spec">
-          <li><span class="label">Principals:</span><br>ALT, AST, ALP, GGT, TP, Alb, TBIL, DBIL, LDH, CK, CK-MB, a-HBDH, CHO, TG, HDL_C, LDL_C, Apo A1, Apo B, Lp(a), BUN, CRE, UA, CO2-CP, AMS, LIP, GLU, HbA1C, IgA, IgG, IgM, C3, C4, CRP, Alcohol etc.</li>
-          <li><span class="label">Test Method:</span><br>Endpoint, Fixed-time, Kinetics and Turbidimetry</li>
-          <li><span class="label">Light Source:</span><br>Halogen lamp, 6V 10W<br>Auto sleeping function</li>
-          <li><span class="label">Wavelength:</span><br>340–630nm standard, optional: 670nm</li>
-          <li><span class="label">Photometric Range:</span><br>0–3.2 ABS<br>Accuracy: 0.0001A</li>
-          <li><span class="label">Flowcell:</span><br>Quartz glass<br>32µL, 10mm optical path</li>
-          <li><span class="label">Storage:</span><br>&gt;100,000 test results</li>
-          <li><span class="label">Input:</span><br>7.0" TFT LCD, touch pen, mouse & keyboard via USB</li>
-          <li><span class="label">Temperature Control:</span><br>Peltier system, 25–37°C</li>
-          <li><span class="label">Printer:</span><br>Built-in thermal printer<br>Supports external printer (HP, PCL6 series)</li>
-          <li><span class="label">Interface:</span><br>LAN x1, USB 2.0 x2</li>
-          <li><span class="label">Working Environment:</span><br>10–30°C, 30%–80% humidity</li>
-          <li><span class="label">Power:</span><br>AC 100–240V, 50/60Hz</li>
-          <li><span class="label">Dimension:</span><br>354 × 292 × 150 mm</li>
-          <li><span class="label">Weight:</span><br>5.2 kg</li>
-        </ul>
+      <div class="tabs" role="tablist" aria-label="Navigasi konten produk">
+        <div class="tab active" role="tab" tabindex="0" aria-selected="true" onclick="openTab(event,'description')">Product Description</div>
+        <div class="tab" role="tab" tabindex="0" aria-selected="false" onclick="openTab(event,'brochure')">Brochure</div>
       </div>
-    </div>
 
-    <div id="brochure" class="tab-content">
-      <h2>Brosur Produk</h2>
-      <img src="Brosur ChemNeo_page1.jpg" alt="Halaman 1 Brosur ChemNeo" class="brosur-img" />
-      <img src="Brosur ChemNeo_page2.jpg" alt="Halaman 2 Brosur ChemNeo" class="brosur-img" />
-      <a href="Brosur ChemNeo.pdf" class="download-link" download>📥 Unduh PDF Brosur</a>
-    </div>
+      <div id="description" class="tab-content active" role="tabpanel">
+        <h2>Fitur Produk</h2>
+        <div class="product-features-box">
+          <ul class="product-features">
+            <li>Endpoint, Fixed-time, Kinetics, dan Turbidimetry</li>
+            <li>8 panjang gelombang (340–670 nm)</li>
+            <li>Layar sentuh TFT 7.0"</li>
+            <li>Dukungan keyboard dan mouse via USB</li>
+            <li>Lampu halogen tahan lama</li>
+            <li>Flow cell quartz permanen</li>
+            <li>Menyimpan &gt;100.000 hasil tes</li>
+            <li>Tampilan kurva reaksi real-time</li>
+            <li>Printer termal built-in</li>
+            <li>Inkubasi hingga 16 posisi</li>
+          </ul>
+        </div>
+
+        <h2>Spesifikasi Teknis</h2>
+        <div class="product-spec-box">
+          <ul class="product-spec">
+            <li><span class="label">Principals:</span><br>ALT, AST, ALP, GGT, TP, Alb, TBIL, DBIL, LDH, CK, CK-MB, a-HBDH, CHO, TG, HDL_C, LDL_C, Apo A1, Apo B, Lp(a), BUN, CRE, UA, CO2-CP, AMS, LIP, GLU, HbA1C, IgA, IgG, IgM, C3, C4, CRP, Alcohol etc.</li>
+            <li><span class="label">Test Method:</span><br>Endpoint, Fixed-time, Kinetics and Turbidimetry</li>
+            <li><span class="label">Light Source:</span><br>Halogen lamp, 6V 10W<br>Auto sleeping function</li>
+            <li><span class="label">Wavelength:</span><br>340–630nm standard, optional: 670nm</li>
+            <li><span class="label">Photometric Range:</span><br>0–3.2 ABS<br>Accuracy: 0.0001A</li>
+            <li><span class="label">Flowcell:</span><br>Quartz glass<br>32µL, 10mm optical path</li>
+            <li><span class="label">Storage:</span><br>&gt;100,000 test results</li>
+            <li><span class="label">Input:</span><br>7.0" TFT LCD, touch pen, mouse & keyboard via USB</li>
+            <li><span class="label">Temperature Control:</span><br>Peltier system, 25–37°C</li>
+            <li><span class="label">Printer:</span><br>Built-in thermal printer<br>Supports external printer (HP, PCL6 series)</li>
+            <li><span class="label">Interface:</span><br>LAN x1, USB 2.0 x2</li>
+            <li><span class="label">Working Environment:</span><br>10–30°C, 30%–80% humidity</li>
+            <li><span class="label">Power:</span><br>AC 100–240V, 50/60Hz</li>
+            <li><span class="label">Dimension:</span><br>354 × 292 × 150 mm</li>
+            <li><span class="label">Weight:</span><br>5.2 kg</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="brochure" class="tab-content" role="tabpanel">
+        <h2>Brosur Produk</h2>
+        <img src="Brosur ChemNeo_page1.jpg" alt="Halaman 1 brosur iHeto ChemNeo" class="brosur-img" />
+        <img src="Brosur ChemNeo_page2.jpg" alt="Halaman 2 brosur iHeto ChemNeo" class="brosur-img" />
+        <a href="Brosur ChemNeo.pdf" class="download-link" download aria-label="Unduh brosur PDF">📥 Unduh PDF Brosur</a>
+      </div>
+    </main>
 
     <footer>
-      <div style="margin-top:0.5rem;">© PT. Bhayanaka Tama Sakti</div>
+      <div>© PT. Bhayanaka Tama Sakti</div>
     </footer>
   </div>
 
