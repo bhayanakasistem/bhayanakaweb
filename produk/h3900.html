@@ -4,64 +4,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>iHeto H3900 - 3-Part Hematology Analyzer</title>
+  <meta name="description" content="iHeto H3900 3-Part Hematology Analyzer – fitur, spesifikasi, dan brosur." />
   <link rel="stylesheet" href="common.css" />
 </head>
 <body>
   <div id="page-content">
     <header>
-      <a href="https://bhayanakasistem.github.io/bhayanakaweb/" class="back-home">🏠 Beranda</a>
+      <a href="https://bhayanakasistem.github.io/bhayanakaweb/" class="back-home" aria-label="Kembali ke beranda">🏠 Beranda</a>
       <h1>iHeto H3900</h1>
       <p>3-Part Hematology Analyzer</p>
     </header>
 
-    <div class="product-image-wrapper">
-      <span class="nav-arrow nav-left" onclick="loadProduct('au240.html','right')" title="iHeto AU240">‹</span>
-      <img src="h3900.jpg" alt="Gambar Produk H3900" />
-      <span class="nav-arrow nav-right" onclick="loadProduct('h5910.html','left')" title="iHeto H5910">›</span>
-    </div>
-
-    <div class="tabs">
-      <div class="tab active" onclick="openTab(event,'description')">Product Description</div>
-      <div class="tab" onclick="openTab(event,'brochure')">Brochure</div>
-    </div>
-
-    <div id="description" class="tab-content active">
-      <h2>Fitur Produk</h2>
-      <div class="product-features-box">
-        <ul class="product-features">
-          <li>Troughput 60 sample per jam</li>
-          <li>Layar sentuh 10.4"</li>
-          <li>Penyimpanan hingga 600.000 hasil tes</li>
-        </ul>
+    <main>
+      <div class="product-image-wrapper">
+        <a href="au240.html" class="nav-arrow nav-left" aria-label="Produk sebelumnya: iHeto AU240" onclick="loadProduct('au240.html','right'); return false;">‹</a>
+        <img src="h3900.jpg" alt="Gambar iHeto H3900 3-Part Hematology Analyzer" />
+        <a href="h5910.html" class="nav-arrow nav-right" aria-label="Produk selanjutnya: iHeto H5910" onclick="loadProduct('h5910.html','left'); return false;">›</a>
       </div>
 
-      <h2>Spesifikasi Teknis</h2>
-      <div class="product-spec-box">
-        <ul class="product-spec">
-          <li><span class="label">22 Parameters:</span><br>WBC, RBC, HGB, PLT, MCV, MPV, GRAN%, LYM%, MID%, RDW-SD, RDW-CV, PDW-CV, PDW-SD, P-LCC, GRAN#, LYM#, MID#, HCT, MCH, MCHC, PCT, P-LCR</li>
-          <li><span class="label">Detection Channel:</span><br>Dual-channel for counting</li>
-          <li><span class="label">Sample Volume</span><br>Whole Blood 9µl, Prediluted 320µl</li>
-          <li><span class="label">Counting Modes:</span><br>L-WBC, L-PLT, L-WBC/PLT</li>
-          <li><span class="label">Input/Output:</span><br>4 USB ports and 1 LAN port</li>
-          <li><span class="label">Printout:</span><br>Internal Thermal Printer; support USB external printer</li>
-          <li><span class="label">Language:</span><br>English, Chinese, Spanish</li>
-          <li><span class="label">Principle:</span><br>Electrical Impedance Method / Colorimetric Method</li>
-          <li><span class="label">Power Supply:</span><br>100-240V, 50-60Hz</li>
-          <li><span class="label">Dimension:</span><br>460(L)x280(W)x400(H)</li>
-          <li><span class="label">Net Weight:</span><br>18kg</li>
-        </ul>
+      <div class="tabs" role="tablist" aria-label="Navigasi konten produk">
+        <div class="tab active" role="tab" tabindex="0" aria-selected="true" onclick="openTab(event,'description')">Product Description</div>
+        <div class="tab" role="tab" tabindex="0" aria-selected="false" onclick="openTab(event,'brochure')">Brochure</div>
       </div>
-    </div>
 
-    <div id="brochure" class="tab-content">
-      <h2>Brosur Produk</h2>
-      <img src="Brosur H3900_page1.jpg" alt="Halaman 1 Brosur H3900" class="brosur-img" />
-      <img src="Brosur H3900_page2.jpg" alt="Halaman 2 Brosur H3900" class="brosur-img" />
-      <a href="Brosur H3900.pdf" class="download-link" download>📥 Unduh PDF Brosur</a>
-    </div>
+      <div id="description" class="tab-content active" role="tabpanel">
+        <h2>Fitur Produk</h2>
+        <div class="product-features-box">
+          <ul class="product-features">
+            <li>Troughput 60 sample per jam</li>
+            <li>Layar sentuh 10.4"</li>
+            <li>Penyimpanan hingga 600.000 hasil tes</li>
+          </ul>
+        </div>
+
+        <h2>Spesifikasi Teknis</h2>
+        <div class="product-spec-box">
+          <ul class="product-spec">
+            <li><span class="label">22 Parameters:</span><br>WBC, RBC, HGB, PLT, MCV, MPV, GRAN%, LYM%, MID%, RDW-SD, RDW-CV, PDW-CV, PDW-SD, P-LCC, GRAN#, LYM#, MID#, HCT, MCH, MCHC, PCT, P-LCR</li>
+            <li><span class="label">Detection Channel:</span><br>Dual-channel for counting</li>
+            <li><span class="label">Sample Volume:</span><br>Whole Blood 9µl, Prediluted 320µl</li>
+            <li><span class="label">Counting Modes:</span><br>L-WBC, L-PLT, L-WBC/PLT</li>
+            <li><span class="label">Input/Output:</span><br>4 USB ports and 1 LAN port</li>
+            <li><span class="label">Printout:</span><br>Internal Thermal Printer; support USB external printer</li>
+            <li><span class="label">Language:</span><br>English, Chinese, Spanish</li>
+            <li><span class="label">Principle:</span><br>Electrical Impedance Method / Colorimetric Method</li>
+            <li><span class="label">Power Supply:</span><br>100-240V, 50-60Hz</li>
+            <li><span class="label">Dimension:</span><br>460(L) x 280(W) x 400(H) mm</li>
+            <li><span class="label">Net Weight:</span><br>18 kg</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="brochure" class="tab-content" role="tabpanel">
+        <h2>Brosur Produk</h2>
+        <img src="Brosur H3900_page1.jpg" alt="Halaman 1 brosur iHeto H3900" class="brosur-img" />
+        <img src="Brosur H3900_page2.jpg" alt="Halaman 2 brosur iHeto H3900" class="brosur-img" />
+        <a href="Brosur H3900.pdf" class="download-link" download aria-label="Unduh brosur PDF">📥 Unduh PDF Brosur</a>
+      </div>
+    </main>
 
     <footer>
-      <div style="margin-top:0.5rem;">© PT. Bhayanaka Tama Sakti</div>
+      <div>© PT. Bhayanaka Tama Sakti</div>
     </footer>
   </div>
 
