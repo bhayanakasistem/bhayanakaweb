@@ -4,47 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>iHeto AU200 Auto Chemistry Analyzer</title>
+  <meta name="description" content="iHeto AU200 Auto Chemistry Analyzer – fitur, spesifikasi, dan brosur." />
   <link rel="stylesheet" href="common.css" />
 </head>
 <body>
   <div id="page-content">
     <header>
-      <a href="https://bhayanakasistem.github.io/bhayanakaweb/" class="back-home">🏠 Beranda</a>
+      <a href="https://bhayanakasistem.github.io/bhayanakaweb/" class="back-home" aria-label="Kembali ke beranda">🏠 Beranda</a>
       <h1>iHeto AU200</h1>
       <p>Auto Chemistry Analyzer</p>
     </header>
 
-    <div class="product-image-wrapper">
-      <span class="nav-arrow nav-left" onclick="loadProduct('au120.html','right')" title="iHeto AU120">‹</span>
-      <img src="au200.jpg" alt="Gambar Produk AU200" />
-      <span class="nav-arrow nav-right" onclick="loadProduct('au240.html','left')" title="iHeto AU240">›</span>
-    </div>
-
-    <div class="tabs">
-      <div class="tab active" onclick="openTab(event,'description')">Product Description</div>
-      <div class="tab" onclick="openTab(event,'brochure')">Brochure</div>
-    </div>
-
-    <div id="description" class="tab-content active">
-      <h2>Fitur Produk</h2>
-      <div class="product-features-box">
-        <ul class="product-features">
-          <li><span class="label">🔬 Precise</span><br>Data akurat dan konsisten mendukung keputusan klinis cepat.</li>
-          <li><span class="label">📏 Compact</span><br>Desain efisien, mampu 200 tes/jam, pas untuk throughput menengah.</li>
-          <li><span class="label">⚙️ Stable</span><br>Operasi jangka panjang dengan performa andal.</li>
-        </ul>
+    <main>
+      <div class="product-image-wrapper">
+        <a href="au120.html" class="nav-arrow nav-left" aria-label="Produk sebelumnya: iHeto AU120" onclick="loadProduct('au120.html','right'); return false;">‹</a>
+        <img src="au200.jpg" alt="Gambar iHeto AU200 Auto Chemistry Analyzer" />
+        <a href="au240.html" class="nav-arrow nav-right" aria-label="Produk selanjutnya: iHeto AU240" onclick="loadProduct('au240.html','left'); return false;">›</a>
       </div>
-    </div>
 
-    <div id="brochure" class="tab-content">
-      <h2>Brosur Produk</h2>
-      <img src="Brosur AU200_page1.jpg" alt="Halaman 1 Brosur AU200" class="brosur-img" />
-      <img src="Brosur AU200_page2.jpg" alt="Halaman 2 Brosur AU200" class="brosur-img" />
-      <a href="Brosur AU200.pdf" class="download-link" download>📥 Unduh PDF Brosur</a>
-    </div>
+      <div class="tabs" role="tablist" aria-label="Navigasi konten produk">
+        <div class="tab active" role="tab" tabindex="0" aria-selected="true" onclick="openTab(event,'description')">Product Description</div>
+        <div class="tab" role="tab" tabindex="0" aria-selected="false" onclick="openTab(event,'brochure')">Brochure</div>
+      </div>
+
+      <div id="description" class="tab-content active" role="tabpanel">
+        <h2>Fitur Produk</h2>
+        <div class="product-features-box">
+          <ul class="product-features">
+            <li>
+              <span class="label">🔬 Precise</span><br>
+              Data akurat dan konsisten mendukung keputusan klinis cepat.
+            </li>
+            <li>
+              <span class="label">📏 Compact</span><br>
+              Desain efisien, mampu <strong>200 tes per jam</strong>, cocok untuk throughput menengah.
+            </li>
+            <li>
+              <span class="label">⚙️ Stable</span><br>
+              Operasi jangka panjang dengan performa andal.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="brochure" class="tab-content" role="tabpanel">
+        <h2>Brosur Produk</h2>
+        <img src="Brosur AU200_page1.jpg" alt="Halaman 1 brosur iHeto AU200" class="brosur-img" />
+        <img src="Brosur AU200_page2.jpg" alt="Halaman 2 brosur iHeto AU200" class="brosur-img" />
+        <a href="Brosur AU200.pdf" class="download-link" download aria-label="Unduh brosur PDF">📥 Unduh PDF Brosur</a>
+      </div>
+    </main>
 
     <footer>
-     <div style="margin-top:0.5rem;">© PT. Bhayanaka Tama Sakti</div>
+      <div>© PT. Bhayanaka Tama Sakti</div>
     </footer>
   </div>
 
