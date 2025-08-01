@@ -33,7 +33,7 @@ header {
   padding: 0.45rem .8rem; /* sedikit lebih compact */
   border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: medium;
   font-size: 0.85rem;
   display: inline-flex;
   align-items: center;
