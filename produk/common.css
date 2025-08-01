@@ -192,19 +192,19 @@ footer {
 
 @media (max-width: 600px) {
   .nav-arrow {
-    font-size: 4rem; /* disesuaikan mobile */
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
     padding: 0 .5rem;
+    background: rgba(255,255,255,0.85);
   }
   .nav-left {
-    position: fixed;
-    top: 50%;
-    left: calc(50% - 100px);
-    transform: translateY(-50%);
+    left: 8px; /* dekat kiri, tetap di tengah vertikal */
+    transform: translateY(-50%); /* reset transform combo */
   }
   .nav-right {
-    position: fixed;
-    top: 50%;
-    left: calc(50% + 60px);
+    right: 8px;
     transform: translateY(-50%);
   }
 }
