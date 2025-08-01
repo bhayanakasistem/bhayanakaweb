@@ -191,6 +191,11 @@ footer {
 @keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity:1; } }
 
 @media (max-width: 600px) {
+    .back-home {
+    padding: 0.35rem .6rem;
+    font-size: 0.45rem;
+  }
+  
   .nav-arrow {
     position: fixed;
     top: 50%;
