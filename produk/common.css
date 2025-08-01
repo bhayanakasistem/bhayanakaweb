@@ -32,22 +32,23 @@ header {
   position: relative;
   background-color: var(--pastel-header);
   color: var(--blue);
-  padding: 0.5rem 1rem;
+  padding: 0.35rem 1rem;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-size: 1.1rem;
 }
 
 .back-home {
   position: absolute;
   left: 1rem;
-  top: 1rem;
+  top: 0.4rem;
   background-color: var(--highlight);
   color: black;
-  padding: 0.45rem .8rem;
+  padding: 0.35rem 0.7rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 400;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -262,7 +263,8 @@ footer {
 
 @media (max-width: 600px) {
   .back-home {
-    padding: 0.4rem 0.8rem;
+    top: 0.3rem;
+    padding: 0.3rem 0.6rem;
     font-size: 0.7rem;
   }
 
@@ -290,5 +292,10 @@ footer {
 
   .tab-content {
     padding: 1.2rem;
+  }
+
+  header {
+    padding: 0.3rem 0.8rem;
+    font-size: 1rem;
   }
 }
