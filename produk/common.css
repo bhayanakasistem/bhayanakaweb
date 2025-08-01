@@ -180,6 +180,7 @@ footer {
   margin-top: 2rem;
   font-size: .95rem;
   color: #555;
+  clear: both;
 }
 
 /* slide helpers */
