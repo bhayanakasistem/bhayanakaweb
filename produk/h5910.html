@@ -4,50 +4,71 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>iHeto H5910 5-Part Hematology Analyzer</title>
+  <meta name="description" content="iHeto H5910 5-Part Hematology Analyzer – fitur, spesifikasi, dan brosur." />
   <link rel="stylesheet" href="common.css" />
 </head>
 <body>
   <div id="page-content">
     <header>
-      <a href="https://bhayanakasistem.github.io/bhayanakaweb/" class="back-home">🏠 Beranda</a>
+      <a href="https://bhayanakasistem.github.io/bhayanakaweb/" class="back-home" aria-label="Kembali ke beranda">🏠 Beranda</a>
       <h1>iHeto H5910</h1>
       <p>5-Part Hematology Analyzer</p>
     </header>
 
-    <div class="product-image-wrapper">
-      <span class="nav-arrow nav-left" onclick="loadProduct('h3900.html','right')" title="iHeto H3900">‹</span>
-      <img src="h5910.jpg" alt="Gambar Produk H5910" />
-      <span class="nav-arrow nav-right" onclick="loadProduct('chemneo.html','left')" title="iHeto ChemNeo">›</span>
-    </div>
-
-    <div class="tabs">
-      <div class="tab active" onclick="openTab(event,'description')">Product Description</div>
-      <div class="tab" onclick="openTab(event,'brochure')">Brochure</div>
-    </div>
-
-    <div id="description" class="tab-content active">
-      <h2>Fitur Produk</h2>
-      <div class="product-features-box">
-        <ul class="product-features">
-          <li><span class="label">🖥️ Layar Sentuh Besar Premium</span><br>Layar beresolusi tinggi, responsif, mudah digunakan.</li>
-          <li><span class="label">💧 SMART-FLOW</span><br>Sistem aliran cairan efisien dan stabil tanpa perawatan intensif.</li>
-          <li><span class="label">🎯 Akurat PLT Rendah</span><br>Teknologi Sweep-Flow menjaga presisi trombosit rendah.</li>
-          <li><span class="label">🧪 Sampel Minimal</span><br>Hanya ≤20µl per tes, cocok untuk pasien rentan.</li>
-          <li><span class="label">💰 Hemat Reagen</span><br>Hanya tiga reagen per pengujian dengan konsumsi efisien.</li>
-          <li><span class="label">👌 Operasi Mudah</span><br>Satu sentuhan untuk mulai, recovery cepat dari error.</li>
-        </ul>
+    <main>
+      <div class="product-image-wrapper">
+        <a href="h3900.html" class="nav-arrow nav-left" aria-label="Produk sebelumnya: iHeto H3900" onclick="loadProduct('h3900.html','right'); return false;">‹</a>
+        <img src="h5910.jpg" alt="Gambar iHeto H5910 5-Part Hematology Analyzer" />
+        <a href="chemneo.html" class="nav-arrow nav-right" aria-label="Produk selanjutnya: iHeto ChemNeo" onclick="loadProduct('chemneo.html','left'); return false;">›</a>
       </div>
-    </div>
 
-    <div id="brochure" class="tab-content">
-      <h2>Brosur Produk</h2>
-      <img src="Brosur H5910_page1.jpg" alt="Halaman 1 Brosur H5910" class="brosur-img" />
-      <img src="Brosur H5910_page2.jpg" alt="Halaman 2 Brosur H5910" class="brosur-img" />
-      <a href="Brosur H5910.pdf" class="download-link" download>📥 Unduh PDF Brosur</a>
-    </div>
+      <div class="tabs" role="tablist" aria-label="Navigasi konten produk">
+        <div class="tab active" role="tab" tabindex="0" aria-selected="true" onclick="openTab(event,'description')">Product Description</div>
+        <div class="tab" role="tab" tabindex="0" aria-selected="false" onclick="openTab(event,'brochure')">Brochure</div>
+      </div>
+
+      <div id="description" class="tab-content active" role="tabpanel">
+        <h2>Fitur Produk</h2>
+        <div class="product-features-box">
+          <ul class="product-features">
+            <li>
+              <span class="label">🖥️ Layar Sentuh Besar Premium</span><br>
+              Layar beresolusi tinggi, responsif, mudah digunakan.
+            </li>
+            <li>
+              <span class="label">💧 SMART-FLOW</span><br>
+              Sistem aliran cairan efisien dan stabil tanpa perawatan intensif.
+            </li>
+            <li>
+              <span class="label">🎯 Akurat PLT Rendah</span><br>
+              Teknologi Sweep-Flow menjaga presisi trombosit rendah.
+            </li>
+            <li>
+              <span class="label">🧪 Sampel Minimal</span><br>
+              Hanya ≤20µl per tes, cocok untuk pasien rentan.
+            </li>
+            <li>
+              <span class="label">💰 Hemat Reagen</span><br>
+              Hanya tiga reagen per pengujian dengan konsumsi efisien.
+            </li>
+            <li>
+              <span class="label">👌 Operasi Mudah</span><br>
+              Satu sentuhan untuk mulai, recovery cepat dari error.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="brochure" class="tab-content" role="tabpanel">
+        <h2>Brosur Produk</h2>
+        <img src="Brosur H5910_page1.jpg" alt="Halaman 1 brosur iHeto H5910" class="brosur-img" />
+        <img src="Brosur H5910_page2.jpg" alt="Halaman 2 brosur iHeto H5910" class="brosur-img" />
+        <a href="Brosur H5910.pdf" class="download-link" download aria-label="Unduh brosur PDF">📥 Unduh PDF Brosur</a>
+      </div>
+    </main>
 
     <footer>
-      <div style="margin-top:0.5rem;">© PT. Bhayanaka Tama Sakti</div>
+      <div>© PT. Bhayanaka Tama Sakti</div>
     </footer>
   </div>
 
